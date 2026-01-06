@@ -59,13 +59,13 @@
   <body>
     <main>
       <h1>module/csv - V8 module</h1>
-      <p class="intro">Turn CSV strings into usable rows or objects, and go back to CSV when you need a file-ready export. This module keeps things straightforward so workflows can parse, format, and share data without extra dependencies.</p>
+      <p class="intro">CSV gives workflows a simple way to turn text tables into usable data and back again, without extra dependencies or runtime setup. Use it when you need quick parsing, light formatting, or clean exports.</p>
       <p class="muted">Learn more at <a href="https://instago.ai" target="_blank" rel="noopener">https://instago.ai</a>.</p>
       <div class="section">
         <h2>Technical reference</h2>
         <h1>module/csv - V8 module</h1>
-<p>Turn CSV strings into usable rows or objects, and go back to CSV when you need a file-ready export. This module keeps things straightforward so workflows can parse, format, and share data without extra dependencies.</p>
-<p>It is designed to fit the lightweight V8 runtime used by Instago. Learn more at https://instago.ai.</p>
+<p>CSV gives workflows a simple way to turn text tables into usable data and back again, without extra dependencies or runtime setup. Use it when you need quick parsing, light formatting, or clean exports.</p>
+<p>It is built for the lightweight V8 runtime used by Instago. Learn more at https://instago.ai.</p>
 <h2>Technical reference</h2>
 <p>Exports:</p>
 <ul>
@@ -77,9 +77,10 @@
 <p>Usage:</p>
 <ul>
 <li><code>parse</code> returns <code>data</code> as an array of rows (each row is an array of strings).</li>
-<li><code>stringify</code> accepts either rows (arrays) or objects; when using objects, pass <code>headers</code> to control column order.</li>
+<li><code>parse</code> accepts <code>delimiter</code> (default <code>,</code>); <code>headers</code> is accepted but does not alter parsing.</li>
+<li><code>stringify</code> accepts either rows (arrays) or objects. In object mode, <code>headers</code> controls column order and adds a header row; otherwise headers are inferred and no header row is written.</li>
 <li><code>toObjects</code> uses the first row as headers unless an explicit <code>headers</code> array is provided.</li>
-<li><code>fromObjects</code> returns <code>{ headers, rows }</code> where headers are derived from the first object.</li>
+<li><code>fromObjects</code> returns <code>{ headers, rows }</code> where headers come from the first object and rows include a header row.</li>
 </ul>
 <p>Configuration:</p>
 <ul>
@@ -107,7 +108,15 @@ const { data: grid } = csv.fromObjects([
 const { data: csvText } = csv.stringify(grid.rows, { delimiter: &#x27;;&#x27; });
 </code></pre>
       </div>
-      
+      <div class="section">
+  <h2>Changelog</h2>
+  <h2>v1.0.1 - CSV module maintenance release</h2>
+<p>Patch release for the csv module focused on release metadata and stability; no API changes.</p>
+<h3>Changed</h3>
+<ul>
+<li>Release metadata updated for v1.0.1.</li>
+</ul>
+</div>
     </main>
   </body>
 </html>

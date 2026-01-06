@@ -1,0 +1,17 @@
+{
+  "name": "@instago/csv",
+  "version": "1.0.1",
+  "description": "Module csv",
+  "main": "index.js",
+  "type": "commonjs",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "instago",
+    "csv"
+  ],
+  "files": [
+    "index.js",
+    "ReadMe.MD",
+    "LICENSE"
+  ]
+}

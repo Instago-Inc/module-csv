@@ -1,5 +1,5 @@
-const t = require('utest@1.0.0');
-const csv = require('csv@1.0.0');
+const t = require('utest@latest');
+const csv = require('csv@latest');
 
 t.test('parse basic with quotes', () => {
   const input = 'a,b,c\n1,hello,3\n2,"hi, there",4\n3,"He said ""ok""",5\n';

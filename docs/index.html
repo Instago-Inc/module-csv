@@ -59,13 +59,13 @@
   <body>
     <main>
       <h1>module/csv - V8 module</h1>
-      <p class="intro">CSV gives workflows a simple way to turn text tables into usable data and back again, without extra dependencies or runtime setup. Use it when you need quick parsing, light formatting, or clean exports.</p>
+      <p class="intro">CSV is a small helper for turning comma-separated text into arrays and back again. It is meant for quick data shuttling in workflows when you do not want heavier tooling.</p>
       <p class="muted">Learn more at <a href="https://instago.ai" target="_blank" rel="noopener">https://instago.ai</a>.</p>
       <div class="section">
         <h2>Technical reference</h2>
         <h1>module/csv - V8 module</h1>
-<p>CSV gives workflows a simple way to turn text tables into usable data and back again, without extra dependencies or runtime setup. Use it when you need quick parsing, light formatting, or clean exports.</p>
-<p>It is built for the lightweight V8 runtime used by Instago. Learn more at https://instago.ai.</p>
+<p>CSV is a small helper for turning comma-separated text into arrays and back again. It is meant for quick data shuttling in workflows when you do not want heavier tooling.</p>
+<p>It runs in the Instago V8 environment. Learn more at https://instago.ai.</p>
 <h2>Technical reference</h2>
 <p>Exports:</p>
 <ul>
@@ -76,11 +76,10 @@
 </ul>
 <p>Usage:</p>
 <ul>
-<li><code>parse</code> returns <code>data</code> as an array of rows (each row is an array of strings).</li>
-<li><code>parse</code> accepts <code>delimiter</code> (default <code>,</code>); <code>headers</code> is accepted but does not alter parsing.</li>
-<li><code>stringify</code> accepts either rows (arrays) or objects. In object mode, <code>headers</code> controls column order and adds a header row; otherwise headers are inferred and no header row is written.</li>
+<li><code>parse</code> returns <code>data</code> as an array of rows (each row is an array of strings). <code>delimiter</code> defaults to <code>,</code>; <code>headers</code> is accepted but does not change parsing.</li>
+<li><code>stringify</code> accepts either rows (arrays) or objects. In object mode, <code>headers</code> controls column order and adds a header row when provided; otherwise keys are inferred from the first object and no header row is written.</li>
 <li><code>toObjects</code> uses the first row as headers unless an explicit <code>headers</code> array is provided.</li>
-<li><code>fromObjects</code> returns <code>{ headers, rows }</code> where headers come from the first object and rows include a header row.</li>
+<li><code>fromObjects</code> returns <code>{ headers, rows }</code> where <code>headers</code> come from the first object and <code>rows</code> includes the header row.</li>
 </ul>
 <p>Configuration:</p>
 <ul>
@@ -110,7 +109,13 @@ const { data: csvText } = csv.stringify(grid.rows, { delimiter: &#x27;;&#x27; })
       </div>
       <div class="section">
   <h2>Changelog</h2>
-  <h2>v1.0.1 - CSV module maintenance release</h2>
+  <h2>v1.0.2 - Streamlined csv docs and usage guide</h2>
+<p>Documentation and site copy now spell out csv parsing and stringify behavior so workflows know what to expect from the module.</p>
+<h3>Changed</h3>
+<ul>
+<li>Clarified README and docs descriptions of parsing options, stringify headers, and marketing copy for the csv module.</li>
+</ul>
+<h2>v1.0.1 - CSV module maintenance release</h2>
 <p>Patch release for the csv module focused on release metadata and stability; no API changes.</p>
 <h3>Changed</h3>
 <ul>
